@@ -1,51 +1,106 @@
-/*C-TASK
-Shunday class tuzing tuzing nomi Shop, va uni constructoriga 3 hil mahsulot pass bolsin,
-hamda classning 3ta methodi bolsin, biri qoldiq, biri sotish va biri qabul. 
-Har bir method ishga tushgan vaqt ham log qilinsin.
-MASALAN: const shop = new Shop(4, 5, 2); 
-shop.qoldiq() return hozir 20:40da 4ta non, 5ta lagmon va 2ta cola mavjud!
- shop.sotish('non', 3) & shop.qabul('cola', 4) & 
- shop.qoldiq() return hozir 20:50da 1ta non, 5ta lagmon va 6ta cola mavjud*/
+/* 
+D-TASK: 
 
-//Answer
- const moment = require ('moment');
-let now = moment().format('h:mm');
- class Shop {
-    non;
-    lagmon;
-    cola;
+Shunday function tuzing, u 2ta string parametr ega bolsin, hamda agar har ikkala string bir hil harflardan iborat bolsa true aks holda false qaytarsin
+MASALAN checkContent("mitgroup", "gmtiprou") return qiladi true;
+ 
+*/
 
 
 
-    constructor(non, lagmon, cola) {
-        this.non = non;
-        this.lagmon =lagmon;
-        this.cola = cola;
-    }
-    qoldiq() {
-        console.log(`hozir ${now}da ${this.non}ta non, ${this.lagmon}ta lagmon va ${this.cola}ta cola mavjud`)
+
+
+
+
+
+
+
+function checkContent(str1, str2) {
+    // Ma'lumot turini tekshirish
+    if (typeof str1 !== "string" || typeof str2 !== "string") {
+        console.log(false); // Agar matnlar string bo'lmasa, false qaytaradi
+        return; // Funksiyani to'xtatadi
     }
 
-    sotish(product, miqdor) {
-        if(this[product] !== undefined && this[product]>= miqdor) {
-            this[product] -= miqdor;
-            console.log(`hozir ${now}da ${miqdor}ta ${product} sotildi va dokonda ${this[product]}ta qoldi`)
-        }else{
-            console.log(`hozir ${now} zahirada sotib olish uchun  ${product} yetarli emas.`)
-        }
+    // 1. Uzunlikni tekshirish
+    if (str1.length !== str2.length) {
+        console.log(false); // Agar uzunliklar teng bo'lmasa, false qaytaradi
+        return; // Funksiyani to'xtatadi
     }
 
-    qabul(product, miqdor) {
-        this[product]+= miqdor;
-        console.log(`Hozir ${now}da ${miqdor}ta ${product} sotib olindi va dokonda ${this[product]}ta boldi`)
+    // 2. Harflarni tartiblash
+    let sortedStr1 = str1.split('').sort().join('');
+    let sortedStr2 = str2.split('').sort().join('');
+
+    // 3. Tartiblangan matnlarni solishtirish
+    if (sortedStr1 === sortedStr2) {
+        console.log(true); // Agar matnlar bir xil harflardan iborat bo'lsa, true qaytaradi
+    } else {
+        console.log(false); // Agar matnlar bir xil bo'lmasa, false qaytaradi
     }
 }
 
-const Shop1 = new Shop(4, 5, 2);
-Shop1.qoldiq();
-Shop1.sotish("non", 3);
-Shop1.qabul('cola', 4)
-Shop1.qoldiq();
+// Sinovlar va natijalarni konsolga chiqarish
+checkContent("mtr", "buttn"); // false
+checkContent("mitgroup", "gmtiprou"); // true
+
+
+
+
+
+
+
+
+
+
+// /*C-TASK
+// Shunday class tuzing tuzing nomi Shop, va uni constructoriga 3 hil mahsulot pass bolsin,
+// hamda classning 3ta methodi bolsin, biri qoldiq, biri sotish va biri qabul. 
+// Har bir method ishga tushgan vaqt ham log qilinsin.
+// MASALAN: const shop = new Shop(4, 5, 2); 
+// shop.qoldiq() return hozir 20:40da 4ta non, 5ta lagmon va 2ta cola mavjud!
+//  shop.sotish('non', 3) & shop.qabul('cola', 4) & 
+//  shop.qoldiq() return hozir 20:50da 1ta non, 5ta lagmon va 6ta cola mavjud*/
+
+// //Answer
+//  const moment = require ('moment');
+// let now = moment().format('h:mm');
+//  class Shop {
+//     non;
+//     lagmon;
+//     cola;
+
+
+
+//     constructor(non, lagmon, cola) {
+//         this.non = non;
+//         this.lagmon =lagmon;
+//         this.cola = cola;
+//     }
+//     qoldiq() {
+//         console.log(`hozir ${now}da ${this.non}ta non, ${this.lagmon}ta lagmon va ${this.cola}ta cola mavjud`)
+//     }
+
+//     sotish(product, miqdor) {
+//         if(this[product] !== undefined && this[product]>= miqdor) {
+//             this[product] -= miqdor;
+//             console.log(`hozir ${now}da ${miqdor}ta ${product} sotildi va dokonda ${this[product]}ta qoldi`)
+//         }else{
+//             console.log(`hozir ${now} zahirada sotib olish uchun  ${product} yetarli emas.`)
+//         }
+//     }
+
+//     qabul(product, miqdor) {
+//         this[product]+= miqdor;
+//         console.log(`Hozir ${now}da ${miqdor}ta ${product} sotib olindi va dokonda ${this[product]}ta boldi`)
+//     }
+// }
+
+// const Shop1 = new Shop(4, 5, 2);
+// Shop1.qoldiq();
+// Shop1.sotish("non", 3);
+// Shop1.qabul('cola', 4)
+// Shop1.qoldiq();
 /*B-TASK*/
 
 //Answer
