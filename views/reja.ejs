@@ -42,14 +42,16 @@
                          class="edit-me btn btn-secondary btn-sm mr-1">
                         Ozgartirish
                     </button>
-                    <button data-id="<%=item._id%>"
+                    <button 
+                    data-id="<%=item._id%>"
                     class="delete-me btn btn-danger btn-sm">Ochirish</button>
                 </div>
             </li>
             <% }) %>
         </ul>
         <button 
-            class="delete-me btn btn-danger btn-sm">Hammma Rejalarni Ochirish</button>
+            id="clean-all"
+            class="delete-all delete-me btn btn-danger btn-sm">Hammma Rejalarni Ochirish</button>
     </div>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="/browser.js"></script>

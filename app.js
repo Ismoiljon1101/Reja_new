@@ -59,6 +59,10 @@ app.post("/delete-item", (req, res) => {
 
 });
 
+app.get("/author", (req, res) => {
+   res.render("author", {user: user});
+});
+
 app.post("/edit-item", (req, res) => {
     const data = req.body; 
     console.log(data); 
@@ -73,9 +77,18 @@ app.post("/edit-item", (req, res) => {
 
 }); 
 
-app.get("/author", (req, res) => {
-   res.render("author", {user: user});
-});
+
+
+app.post("/delete-all", (req, res) => {
+    if (req.body.delete_all){
+        db.collection("plans").deleteMany( function () {
+            res.json({state: "hamma rejalar o'chirildi"});
+
+        });
+
+    };
+
+})
 
 app.get('/', function(red, res) {
     console.log("user entered /");
