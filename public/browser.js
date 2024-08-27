@@ -54,7 +54,34 @@ document.addEventListener("click", function (e) {
 
     //edit oper
     if(e.target.classList.contains("edit-me")) {
-        alert('siz edit tugmasini bosdingiz');
+        let userInput = prompt(
+            "O'zgarish Kiriting", 
+            e.target.parentElement.parentElement.querySelector(".item-text").innerHTML
+        );
+
+        // alert('siz edit tugmasini bosdingiz');
+        if (userInput){
+            axios
+                .post("/edit-item",{
+                    id: e.target.getAttribute("data-id"),
+                    new_input: userInput, 
+
+
+                })  
+                .then((response) => {
+                    console.log(response); 
+                    e.target.parentElement
+                    .parentElement.querySelector(
+                        ".item-text"
+                    ).innerHTML = userInput; 
+
+                })
+                .catch((err) => {
+                    console.log( "O'zgarish Kiriting" )
+                })
+
+            console.log(userInput); 
+        }
     }
 
 });
