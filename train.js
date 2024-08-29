@@ -1,3 +1,35 @@
+/*
+E-TASK: 
+
+Shunday function tuzing, u bitta string argumentni qabul qilib osha stringni teskari qilib return qilsin.
+MASALAN: getReverse("hello") return qilsin "olleh"
+
+
+*/
+
+function reverseString(a) {
+    let result = a.split('').reverse().join('');
+    console.log(result);
+}
+
+reverseString("skoob");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* 
 D-TASK: 
 
@@ -15,34 +47,32 @@ MASALAN checkContent("mitgroup", "gmtiprou") return qiladi true;
 
 
 
-function checkContent(str1, str2) {
-    // Ma'lumot turini tekshirish
-    if (typeof str1 !== "string" || typeof str2 !== "string") {
-        console.log(false); // Agar matnlar string bo'lmasa, false qaytaradi
-        return; // Funksiyani to'xtatadi
-    }
+// function checkContent(str1, str2) {
+//     // Ma'lumot turini tekshirish
+//     if (typeof str1 !== "string" || typeof str2 !== "string") {
+//         console.log(false); 
+//         return; 
+//     }
 
-    // 1. Uzunlikni tekshirish
-    if (str1.length !== str2.length) {
-        console.log(false); // Agar uzunliklar teng bo'lmasa, false qaytaradi
-        return; // Funksiyani to'xtatadi
-    }
+//     // 1. Uzunlikni tekshirish
+//     if (str1.length !== str2.length) {
+//         console.log(false); 
+//         return; 
+//     }
 
-    // 2. Harflarni tartiblash
-    let sortedStr1 = str1.split('').sort().join('');
-    let sortedStr2 = str2.split('').sort().join('');
+//     // 2. Harflarni tartiblash
+//     let sortedStr1 = str1.split('').sort().join('');
+//     let sortedStr2 = str2.split('').sort().join('');
 
-    // 3. Tartiblangan matnlarni solishtirish
-    if (sortedStr1 === sortedStr2) {
-        console.log(true); // Agar matnlar bir xil harflardan iborat bo'lsa, true qaytaradi
-    } else {
-        console.log(false); // Agar matnlar bir xil bo'lmasa, false qaytaradi
-    }
-}
-
-// Sinovlar va natijalarni konsolga chiqarish
-checkContent("mtr", "buttn"); // false
-checkContent("mitgroup", "gmtiprou"); // true
+//     // 3. Tartiblangan matnlarni solishtirish
+//     if (sortedStr1 === sortedStr2) {
+//         console.log(true); 
+//     } else {
+//         console.log(false); 
+// }
+// // test
+// checkContent("mtr", "buttn"); 
+// checkContent("mitgroup", "gmtiprou"); 
 
 
 
