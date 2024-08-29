@@ -12,7 +12,7 @@ function reverseString(a) {
     console.log(result);
 }
 
-reverseString("skoob");
+reverseString("skoobc");
 
 
 
