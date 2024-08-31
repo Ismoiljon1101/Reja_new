@@ -21,4 +21,3 @@ mongodb.connect(connectionString, {
     }
 }
 );
-
