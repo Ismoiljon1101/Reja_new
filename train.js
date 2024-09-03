@@ -1,3 +1,32 @@
+/* G-TASK: 
+
+Shunday function tuzingki unga integerlardan iborat array pass bolsin va function bizga osha arrayning eng katta qiymatiga tegishli birinchi indexni qaytarsin.
+MASALAN: getHighestIndex([5, 21, 12, 21, 8]) return qiladi 1 sonini.
+*/
+
+
+function getHighestIndex(arr) {
+    if (arr.length === 0) return -1; 
+
+    let maxVal = arr[0];
+    let maxIndex = 0;
+
+    for (let i = 1; i < arr.length; i++) {
+        if (arr[i] > maxVal) {
+            maxVal = arr[i];
+            maxIndex = i;
+        }
+    }
+
+    return maxIndex;
+}
+
+
+console.log("helo")
+console.log(getHighestIndex([5, 21, 12, 21, 8])); 
+
+
+
 /*
 
 Shunday findDoublers function tuzing, unga faqat bitta string argument pass bolib, agar stringda bir hil harf qatnashgan bolsa true, qatnashmasa false qaytarishi kerak.
@@ -7,24 +36,24 @@ MASALAN: getReverse("hello") return true return qiladi
 
 */
 
-function findDoublers(str) {
-    let letters = {};
+// function findDoublers(str) {
+//     let letters = {};
 
-    for (let i = 0; i < str.length; i++) {
-        let char = str[i];
-        if (letters[char]) {
+//     for (let i = 0; i < str.length; i++) {
+//         let char = str[i];
+//         if (letters[char]) {
             
-            console.log(true);
-            return; 
-        } else {
-            letters[char] = true;
-        }
-    }
+//             console.log(true);
+//             return; 
+//         } else {
+//             letters[char] = true;
+//         }
+//     }
 
-    console.log(false);
-}
+//     console.log(false);
+// }
 
-findDoublers("bok");
+// findDoublers("bok");
 
 
 
